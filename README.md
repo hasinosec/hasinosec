@@ -1,12 +1,12 @@
 # Ismail Hassan
 
-**Information Security | Application Security | Penetration Testing**
+## Cloud Security & Information Security
 
-Security researcher focused on finding and responsibly disclosing real-world application vulnerabilities. I am also building hands-on cloud security engineering skills through AWS infrastructure and security automation projects.
+I am an information-security researcher and developer with a focus on application security, cloud security, and penetration testing. I find and responsibly disclose real-world vulnerabilities, and I build security-focused projects that turn security concepts into practical controls.
 
 ## Security Research & Bug Bounty
 
-I have reported and helped resolve 10+ vulnerabilities through public bug bounty and coordinated disclosure programmes, including reports affecting Budibase, DataZone.co, Beefree.com, Amplitude, Weights & Biases, Greptile, and CodeRabbit.
+I have reported and helped resolve 10+ vulnerabilities through public bug bounty and coordinated-disclosure programmes, including reports affecting Budibase, DataZone.co, Beefree.com, Amplitude, Weights & Biases, Greptile, and CodeRabbit. My goal is to help organisations understand, fix, and prevent security issues through clear and responsible reporting.
 
 Areas explored include:
 
@@ -23,25 +23,31 @@ Areas explored include:
 | [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) | GHSA-2g39-332f-68p9 | Critical Privilege Escalation & IDOR via Missing RBAC on User Role Management (Creator-Role) |
 | [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) | GHSA-277c-prw2-rqgh | Unauthenticated Password Reset Endpoint Lacks Rate Limiting, Enabling Email Flooding |
 
-## Cloud Security — Hands-On Learning
+## Cloud Security Engineering
 
-I am developing practical AWS cloud-security skills through **File Vault**, a secure document-upload platform that models a small-company architecture.
+I developed **File Vault**, a secure document-upload platform that models a small-company AWS architecture. The project is designed to demonstrate how security is built into cloud infrastructure: controlling identity access, protecting data, separating networks, securely managing secrets, and collecting audit evidence.
 
-Current areas of work:
+File Vault demonstrates:
 
-- Least-privilege IAM and scoped application permissions
-- VPC network segmentation and private data services
-- Encrypted, versioned S3 storage with public-access blocking
-- Private RDS PostgreSQL and Secrets Manager for credentials
-- CloudWatch and CloudTrail logging and audit trails
-- Terraform infrastructure as code
-- CI/CD and policy-as-code scanning with GitHub Actions, Checkov, and Trivy
+- **Identity and access management:** least-privilege IAM roles and narrowly scoped permissions help ensure each service has only the access it needs.
+- **Network security:** VPC segmentation and private data services reduce unnecessary exposure of the database and storage layer.
+- **Data protection:** encrypted, versioned S3 storage with public-access blocking helps protect uploaded documents from accidental exposure or loss.
+- **Secrets management:** database credentials are stored in AWS Secrets Manager instead of source code or configuration files.
+- **Visibility and auditability:** CloudWatch and CloudTrail support monitoring, log collection, and investigation of important cloud activity.
+- **Infrastructure as code:** Terraform makes the cloud configuration repeatable, reviewable, and easier to assess for security misconfigurations.
+- **Security automation:** GitHub Actions, Checkov, and Trivy are used to support CI/CD checks and policy-as-code scanning before infrastructure changes are deployed.
+
+This project reflects my interest in cloud security engineering: applying security controls early, reviewing infrastructure changes, and making secure configuration repeatable.
 
 ## Featured Projects
 
-- [File Vault](https://github.com/hasinosec/file-vault) — Terraform-managed AWS platform with private RDS, encrypted S3, least-privilege IAM, monitoring, and CI.
-- [Failed Login Detector](https://github.com/hasinosec/failed-login-detector) — Python tool that detects potential brute-force attacks from authentication logs.
-- [File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor) — Python SHA-256 monitor that reports modified, new, and deleted files.
+- [File Vault](https://github.com/hasinosec/file-vault) — A Terraform-managed AWS document platform using private RDS, encrypted S3, least-privilege IAM, logging, and CI security checks. It demonstrates practical cloud-security architecture decisions.
+- [Failed Login Detector](https://github.com/hasinosec/failed-login-detector) — A Python log-analysis tool that groups failed authentication attempts by IP address and identifies possible brute-force activity within a configurable time window.
+- [File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor) — A Python tool that creates SHA-256 file baselines and alerts when monitored files are modified, added, or deleted.
+
+## Security Approach
+
+I approach security from both sides: understanding how vulnerabilities can be discovered and abused, then applying controls that make systems more resilient. I am particularly interested in secure cloud architecture, API security, access control, monitoring, detection engineering, and incident response.
 
 ## Skills & Interests
 
