@@ -23,6 +23,12 @@ Areas explored include:
 | [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) | GHSA-2g39-332f-68p9 | Critical Privilege Escalation & IDOR via Missing RBAC on User Role Management (Creator-Role) |
 | [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) | GHSA-277c-prw2-rqgh | Unauthenticated Password Reset Endpoint Lacks Rate Limiting, Enabling Email Flooding |
 
+## CTFs & Hands-On Security Learning
+
+I use legal Capture The Flag (CTF) labs and learning environments to practise security skills safely. On [TryHackMe](https://tryhackme.com/p/Hasinosec), I work through hands-on challenges covering Linux, networking, web and API security, enumeration, vulnerability analysis, and privilege escalation.
+
+CTFs help me understand how an attacker may discover and exploit weaknesses, while reinforcing the defensive controls needed to prevent them. I am currently ranked **#53 on TryHackMe's Nigeria all-time leaderboard** (rank at the time of this update).
+
 ## Cloud Security Engineering
 
 I developed **File Vault**, a secure document-upload platform that models a small-company AWS architecture. The project is designed to demonstrate how security is built into cloud infrastructure: controlling identity access, protecting data, separating networks, securely managing secrets, and collecting audit evidence.
@@ -58,3 +64,8 @@ I approach security from both sides: understanding how vulnerabilities can be di
 **Cloud Security:** AWS, IAM, Terraform, CloudTrail, CloudWatch, policy as code, and cloud-security posture management.
 
 **Tools & Languages:** Burp Suite, GitHub Actions, Checkov, Trivy, Python, JavaScript, and Node.js.
+
+## Connect
+
+- [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/)
+- [TryHackMe](https://tryhackme.com/p/Hasinosec)
