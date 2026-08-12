@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/hasinosec.png" width="130" alt="Ismail Hassan's GitHub profile photo" />
+  <img src="assets/ismail-hassan-profile.jpg" width="130" alt="Photo of Ismail Hassan" />
 </p>
 
 <h1 align="center">Hi 👋, I'm Ismail Hassan</h1>
