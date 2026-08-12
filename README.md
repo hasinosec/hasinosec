@@ -1,12 +1,12 @@
-# Ismail Hassan
+# Hi 👋, I'm Ismail Hassan
 
-## Cloud Security & Information Security
+### Cloud Security & Information Security Engineer | Application Security | Security Operations
 
-I am an Information Security and Cloud Security engineer focused on security operations, cloud security, application security, and security engineering. I build hands-on security projects and use practical security research to understand threats and design controls that make systems more resilient.
+I am an information-security researcher and developer who enjoys understanding how systems fail, then building practical controls to make them safer. My work combines application-security research, cloud-security engineering, detection automation, and responsible vulnerability disclosure.
 
-## Security Operations & Detection
+## Security Operations & Detection 🛡️
 
-I am interested in the full security-operations workflow: collecting security events, identifying suspicious patterns, triaging alerts, and investigating the context needed for an informed response. The projects below are small, transparent examples of detection and monitoring automation written in Python.
+I enjoy the full security-operations workflow: turning raw security events into useful alerts, investigating suspicious behaviour, and improving detections over time. The projects below are practical Python examples of log monitoring and defensive automation.
 
 | Project | Detection focus | What it demonstrates |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ These projects relate to common SOC activities: alert analysis, detection logic,
 
 ![Illustrative workflow for the File Integrity Monitor](assets/file-integrity-monitor-flow.svg)
 
-## Cloud Security Engineering
+## Cloud Security Engineering ☁️
 
 I developed **File Vault**, a secure document-upload platform that models a small-company AWS architecture. The project is designed to demonstrate how security is built into cloud infrastructure: controlling identity access, protecting data, separating networks, securely managing secrets, and collecting audit evidence.
 
@@ -40,7 +40,7 @@ flowchart LR
 
 ![Illustrative File Vault architecture](assets/file-vault-architecture.svg)
 
-*Illustrative architecture diagram based on the File Vault project design. It is not an AWS Console screenshot and contains no account or infrastructure identifiers.*
+*This is a simplified view of how I designed File Vault to protect documents, isolate data services, manage secrets, and capture security-relevant activity. Account-specific infrastructure details remain private during the final security review.*
 
 File Vault demonstrates:
 
@@ -52,18 +52,19 @@ File Vault demonstrates:
 - **Infrastructure as code:** Terraform makes the cloud configuration repeatable, reviewable, and easier to assess for security misconfigurations.
 - **Security automation:** GitHub Actions, Checkov, and Trivy are used to support CI/CD checks and policy-as-code scanning before infrastructure changes are deployed.
 
-The File Vault repository is currently private while I review it for sensitive infrastructure details before sharing it publicly.
+## Security Research & Bug Bounty 🔍
 
-## Security Research & Bug Bounty
+I have reported and helped resolve 10+ vulnerabilities through public bug bounty and coordinated-disclosure programmes, including reports affecting Budibase, DataZone.co, Beefree.com, Amplitude, Weights & Biases, Greptile, and CodeRabbit. My goal is to help organisations understand, fix, and prevent security issues through clear, responsible reporting.
 
-I have reported and helped resolve 10+ vulnerabilities through public bug bounty and coordinated-disclosure programmes, including reports affecting Budibase, DataZone.co, Beefree.com, Amplitude, Weights & Biases, Greptile, and CodeRabbit. My goal is to help organisations understand, fix, and prevent security issues through clear and responsible reporting.
+### Research Areas & Testing Methodologies
 
-Areas explored include:
+**Access control & authentication:** broken access control, IDOR, missing authentication for critical functions, privilege escalation, authentication bypass, JWT testing, and role-based access-control testing.
 
-- Broken access control and insecure direct object references (IDOR)
-- Server-side request forgery (SSRF)
-- Remote code execution (RCE)
-- API and role-based access-control testing
+**Web & API security:** SQL injection, stored/reflected/DOM XSS, CSRF, SSRF, RCE, path traversal, deserialisation risks, XXE, HTTP request smuggling, and WebSocket security testing.
+
+**Application logic & data protection:** business-logic flaws, race conditions, insecure password-reset flows, information disclosure, PII exposure, JavaScript analysis, and API abuse.
+
+**Modern security research:** prompt-injection testing and AI-application security research, performed only within authorised scope.
 
 ### CVEs Assigned
 
@@ -75,7 +76,7 @@ Areas explored include:
 
 Each CVE title above links to its official public GitHub Security Advisory. I do not publish proof-of-concept details that could put users or systems at risk.
 
-## CTFs & Hands-On Security Learning
+## CTFs & Hands-On Security Learning 🎯
 
 I use legal Capture The Flag (CTF) labs and learning environments to practise security skills safely. On [TryHackMe](https://tryhackme.com/p/Hasinosec), I work through hands-on challenges covering Linux, networking, web and API security, enumeration, vulnerability analysis, and privilege escalation.
 
@@ -102,15 +103,27 @@ flowchart LR
 
 I am particularly interested in secure cloud architecture, API security, access control, monitoring, detection engineering, and incident response.
 
-## Skills & Interests
+## Skills 🛠️
 
-**Security Operations:** security monitoring, alert analysis, threat hunting, incident response, and vulnerability research.
+### ☁️ Cloud Security
 
-**Application Security:** OWASP Top 10, API Security Top 10, secure code review, SAST/DAST concepts, and coordinated vulnerability disclosure.
+AWS · IAM and least privilege · VPC and network segmentation · S3 encryption and public-access blocking · RDS security · AWS Secrets Manager · CloudTrail · CloudWatch · Terraform · policy as code · cloud-security posture management
 
-**Cloud Security:** AWS, IAM, Terraform, CloudTrail, CloudWatch, policy as code, and cloud-security posture management.
+### 🛡️ Security Operations & Detection
 
-**Tools & Languages:** Burp Suite, GitHub Actions, Checkov, Trivy, Python, JavaScript, and Node.js.
+Security monitoring · log analysis · alert triage · threat hunting · incident response fundamentals · detection engineering · file-integrity monitoring · brute-force detection · vulnerability research
+
+### 🔍 Application Security & Bug Bounty
+
+OWASP Top 10 · OWASP API Security Top 10 · API testing · secure code review · SAST/DAST concepts · responsible disclosure · access-control testing · business-logic testing · web application penetration testing
+
+### ⚙️ DevSecOps & CI/CD Security
+
+GitHub Actions · infrastructure-as-code security · Checkov · Trivy · dependency and container-scanning concepts · security checks before deployment · secure configuration review
+
+### 💻 Tools & Languages
+
+Burp Suite · Python · JavaScript · Node.js · Terraform · Git · GitHub · AWS CLI
 
 ## Connect
 
