@@ -82,13 +82,22 @@ I have reported and helped resolve 10+ vulnerabilities through public bug bounty
 | [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) | GHSA-2g39-332f-68p9 | Critical Privilege Escalation & IDOR via Missing RBAC on User Role Management (Creator-Role) |
 | [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) | GHSA-277c-prw2-rqgh | Unauthenticated Password Reset Endpoint Lacks Rate Limiting, Enabling Email Flooding |
 
-Each CVE title above links to its official public GitHub Security Advisory. I do not publish proof-of-concept details that could put users or systems at risk.
-
 ## CTFs & Hands-On Security Learning 🎯
 
-I use legal Capture The Flag (CTF) labs and learning environments to practise security skills safely. On [TryHackMe](https://tryhackme.com/p/Hasinosec), I work through hands-on challenges covering Linux, networking, web and API security, enumeration, vulnerability analysis, and privilege escalation.
+I use legal Capture The Flag (CTF) labs and learning environments to practise security skills safely. On [TryHackMe](https://tryhackme.com/p/Hasinosec), I have completed **262 rooms**, earned **23 badges**, and reached the platform's **top 1%** (rank **10,599** at the time of this update).
 
-CTFs help me understand how an attacker may discover and exploit weaknesses, while reinforcing the defensive controls needed to prevent them. I am currently ranked **#53 on TryHackMe's Nigeria all-time leaderboard** (rank at the time of this update).
+My completed labs cover Linux, networking, web and API security, enumeration, vulnerability analysis, exploitation fundamentals, and privilege escalation. CTFs help me understand how attackers discover weaknesses while reinforcing the defensive controls needed to prevent them.
+
+### TryHackMe Learning Highlights
+
+- **Security foundations:** Linux Fundamentals, Network Fundamentals, How the Web Works, Security Awareness, and Introduction to Security Engineering.
+- **Web application security:** OWASP Top 10, SQLMap, web fundamentals, and practical testing concepts.
+- **Infrastructure and cloud security:** Introduction to IaC Security and secure infrastructure concepts.
+- **Windows and network labs:** Ice, Blue, Metasploitable, and other controlled environments for understanding Windows and network attack paths.
+- **Research and investigation:** OhSINT, Hash Cracker, and Mr. Robot.
+- **Consistency:** completed 7-day and 30-day learning streak challenges, plus Advent of Cyber 2024.
+
+I am currently ranked **#53 on TryHackMe's Nigeria all-time leaderboard** (rank at the time of this update).
 
 ## Featured Projects
 
