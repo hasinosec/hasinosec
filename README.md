@@ -15,6 +15,14 @@ I am interested in the full security-operations workflow: collecting security ev
 
 These projects relate to common SOC activities: alert analysis, detection logic, investigation of suspicious activity, and automation of repetitive checks.
 
+### Failed Login Detection Flow
+
+![Illustrative workflow for the Failed Login Detector](assets/failed-login-detector-flow.svg)
+
+### File Integrity Monitoring Flow
+
+![Illustrative workflow for the File Integrity Monitor](assets/file-integrity-monitor-flow.svg)
+
 ## Cloud Security Engineering
 
 I developed **File Vault**, a secure document-upload platform that models a small-company AWS architecture. The project is designed to demonstrate how security is built into cloud infrastructure: controlling identity access, protecting data, separating networks, securely managing secrets, and collecting audit evidence.
@@ -29,6 +37,10 @@ flowchart LR
     Audit --- S3
     Audit --- RDS
 ```
+
+![Illustrative File Vault architecture](assets/file-vault-architecture.svg)
+
+*Illustrative architecture diagram based on the File Vault project design. It is not an AWS Console screenshot and contains no account or infrastructure identifiers.*
 
 File Vault demonstrates:
 
@@ -77,7 +89,18 @@ CTFs help me understand how an attacker may discover and exploit weaknesses, whi
 
 ## Security Approach
 
-I approach security from both sides: understanding how vulnerabilities can be discovered and abused, then applying controls that make systems more resilient. I am particularly interested in secure cloud architecture, API security, access control, monitoring, detection engineering, and incident response.
+I approach security from both sides: understanding how vulnerabilities can be discovered and abused, then applying controls that make systems more resilient.
+
+```mermaid
+flowchart LR
+    Research[Security research] --> Controls[Preventive controls]
+    Controls --> Monitoring[Monitoring and detection]
+    Monitoring --> Triage[Alert triage and investigation]
+    Triage --> Improvement[Improve controls and detection]
+    Improvement --> Research
+```
+
+I am particularly interested in secure cloud architecture, API security, access control, monitoring, detection engineering, and incident response.
 
 ## Skills & Interests
 
