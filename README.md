@@ -76,15 +76,35 @@ I have reported and helped resolve 10+ vulnerabilities through public bug bounty
 
 ### CVEs Assigned
 
-CVEs (Common Vulnerabilities and Exposures) are public identifiers for documented security vulnerabilities. They let security teams, software users, and databases refer to the same issue consistently across the world. The advisories below document vulnerabilities I responsibly reported and that were credited to **Hasinohacker** as reporter.
+CVEs (Common Vulnerabilities and Exposures) are globally recognised identifiers for documented security vulnerabilities. They allow security teams, software users, and vulnerability databases to refer to the same issue consistently. I discovered and responsibly reported the vulnerabilities below, and the corresponding public advisories credit **Hasinohacker** as the reporter.
 
 | CVE | Advisory | Severity | Description |
 | --- | --- | --- |
-| [CVE-2026-73407](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5) | GHSA-mqhr-6j6h-74p5 | Critical | Unauthenticated REST Datasource Credential Theft via Cross-Origin Auth Leak |
-| [CVE-2026-73409](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) | GHSA-ppr4-5f46-j9c6 | High | Server Filesystem Existence/Read Oracle via Builder-Controlled MongoDB TLS Certificate Path |
-| [CVE-2026-25040](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm) | GHSA-4wfw-r86x-qxrm | — | Privilege Escalation via API Abuse — Creator Can Invite Users with Admin/Any Role |
-| [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) | GHSA-2g39-332f-68p9 | — | Critical Privilege Escalation & IDOR via Missing RBAC on User Role Management (Creator-Role) |
-| [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) | GHSA-277c-prw2-rqgh | — | Unauthenticated Password Reset Endpoint Lacks Rate Limiting, Enabling Email Flooding |
+| [CVE-2026-73407](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5) | GHSA-mqhr-6j6h-74p5 | Critical | Unauthenticated REST datasource credential theft via cross-origin authentication leak |
+| [CVE-2026-73409](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) | GHSA-ppr4-5f46-j9c6 | High | Server filesystem existence/read oracle via builder-controlled MongoDB TLS certificate path |
+| [CVE-2026-25040](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm) | GHSA-4wfw-r86x-qxrm | Critical | Privilege escalation via API abuse — Creator can invite users with Admin/Any role |
+| [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) | GHSA-2g39-332f-68p9 | Critical | Privilege escalation and IDOR via missing RBAC on user role management |
+| [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) | GHSA-277c-prw2-rqgh | Medium | Unauthenticated password-reset endpoint lacks rate limiting, enabling email flooding |
+
+### CVE-2026-73407 — Critical
+
+I reported an unauthenticated cross-origin authentication leak in Budibase REST datasources. A public query could send stored datasource credentials to an attacker-controlled destination. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5)
+
+### CVE-2026-73409 — High
+
+I reported a server-side filesystem existence/read oracle caused by builder-controlled MongoDB certificate paths. The issue could reveal whether sensitive server-side paths existed. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6)
+
+### CVE-2026-25040 — Critical
+
+I reported an API privilege-escalation issue where a Creator role could invite users with Admin or arbitrary roles. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm)
+
+### CVE-2026-25045 — Critical
+
+I reported a missing-RBAC issue involving privilege escalation and IDOR in user-role management. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9)
+
+### CVE-2026-25043 — Medium
+
+I reported an unauthenticated password-reset endpoint that lacked rate limiting and could be abused for email flooding. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh)
 
 ### What this demonstrates
 
