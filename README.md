@@ -1,6 +1,6 @@
 # Ismail Hassan
 
-##Cloud Security & Information Security Engineer | DevSecOps | AWS (3x Certified) | IAM & Automation | Kubernetes | Red Team Mindset
+## Cloud Security & Information Security
 
 I am an Information Security and Cloud Security engineer focused on security operations, cloud security, application security, and security engineering. I build hands-on security projects and use practical security research to understand threats and design controls that make systems more resilient.
 
