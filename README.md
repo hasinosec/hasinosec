@@ -1,8 +1,16 @@
-# Hi 👋, I'm Ismail Hassan
+<p align="center">
+  <img src="https://github.com/hasinosec.png" width="130" alt="Ismail Hassan's GitHub profile photo" />
+</p>
 
-### Cloud Security & Information Security Engineer | Application Security | Security Operations
+<h1 align="center">Hi 👋, I'm Ismail Hassan</h1>
+
+<h3 align="center">Cloud Security &amp; Information Security Engineer | Application Security | Security Operations</h3>
 
 I am an information-security researcher and developer who enjoys understanding how systems fail, then building practical controls to make them safer. My work combines application-security research, cloud-security engineering, detection automation, and responsible vulnerability disclosure.
+
+- 🔭 Building security-focused cloud and detection projects
+- 🌱 Currently learning **Splunk, Microsoft Sentinel, and Wireshark** through legal home-lab exercises
+- 💬 Ask me about **web/API security, IAM, Terraform, Python automation, and responsible disclosure**
 
 ## Security Operations & Detection 🛡️
 
@@ -112,6 +120,16 @@ AWS · IAM and least privilege · VPC and network segmentation · S3 encryption 
 ### 🛡️ Security Operations & Detection
 
 Security monitoring · log analysis · alert triage · threat hunting · incident response fundamentals · detection engineering · file-integrity monitoring · brute-force detection · vulnerability research
+
+### 📚 Security Tool Learning Lab
+
+I am building a legal home-lab workflow to practise security monitoring and network analysis on systems and traffic that I own or am explicitly authorised to test.
+
+- **Wireshark:** inspecting packet captures to understand protocols, DNS requests, connections, and suspicious network patterns.
+- **Splunk:** learning how to ingest logs, search events, build dashboards, and create simple detection queries.
+- **Microsoft Sentinel:** learning SIEM concepts, log analytics, analytics rules, and incident investigation workflows.
+
+This is an active learning area. I will publish a separate lab project with real, sanitised screenshots and documented findings after completing the exercises.
 
 ### 🔍 Application Security & Bug Bounty
 
