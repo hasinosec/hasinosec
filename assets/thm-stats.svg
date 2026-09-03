@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-labelledby="t d">
+  <title id="t">TryHackMe hands-on stats</title>
+  <desc id="d">Four stat tiles from TryHackMe: 262 rooms completed, 23 badges earned, top one percent of users globally, and rank 53 on the Nigeria all-time leaderboard.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#141d33"/></linearGradient>
+  </defs>
+  <rect width="1200" height="240" rx="24" fill="url(#bg)"/>
+  <text x="48" y="52" fill="#ffffff" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="24" font-weight="800">Hands-On Practice &#183; TryHackMe</text>
+
+  <g font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(48,84)">
+      <rect width="264" height="120" rx="16" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="132" y="60" fill="#ffffff" font-size="40" font-weight="800">262</text>
+      <text x="132" y="92" fill="#7dd3fc" font-size="14">rooms completed</text>
+    </g>
+    <g transform="translate(336,84)">
+      <rect width="264" height="120" rx="16" fill="#3b1d6e" stroke="#a78bfa" stroke-width="1.5"/>
+      <text x="132" y="60" fill="#ffffff" font-size="40" font-weight="800">23</text>
+      <text x="132" y="92" fill="#c4b5fd" font-size="14">badges earned</text>
+    </g>
+    <g transform="translate(624,84)">
+      <rect width="264" height="120" rx="16" fill="#0e4f4a" stroke="#34d399" stroke-width="1.5"/>
+      <text x="132" y="60" fill="#ffffff" font-size="40" font-weight="800">Top 1%</text>
+      <text x="132" y="92" fill="#6ee7b7" font-size="14">of users globally</text>
+    </g>
+    <g transform="translate(912,84)">
+      <rect width="240" height="120" rx="16" fill="#7c2d12" stroke="#fb923c" stroke-width="1.5"/>
+      <text x="120" y="60" fill="#ffffff" font-size="40" font-weight="800">#53</text>
+      <text x="120" y="92" fill="#fdba74" font-size="14">Nigeria all-time</text>
+    </g>
+  </g>
+</svg>

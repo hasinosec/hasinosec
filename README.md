@@ -1,176 +1,123 @@
 <p align="center">
-  <img src="assets/ismail-hassan-profile.jpg" width="130" alt="Photo of Ismail Hassan" />
+  <img src="assets/header-banner.svg" alt="Ismail Hassan — Cloud Security & DevSecOps Engineer" width="100%" />
 </p>
 
-<h1 align="center">Hi 👋, I'm Ismail Hassan</h1>
+<h1 align="center">Hi, I'm Ismail Hassan</h1>
 
-<h3 align="center">Cloud Security &amp; Information Security Engineer | Application Security | Security Operations</h3>
+<h3 align="center">Cloud Security &amp; DevSecOps Engineer&nbsp;|&nbsp;AWS &middot; Azure &middot; Terraform &middot; IAM &middot; Detection Engineering&nbsp;|&nbsp;Information Security</h3>
 
-I am an information-security researcher and developer who enjoys understanding how systems fail, then building practical controls to make them safer. My work combines application-security research, cloud-security engineering, detection automation, and responsible vulnerability disclosure.
+<p align="center">
+I build and secure cloud infrastructure with code. My work covers least-privilege identity, network segmentation,
+data protection, security automation in CI/CD, and detection engineering &mdash; backed by hands-on vulnerability
+research and five assigned CVEs.
+</p>
 
-- 🔭 Building security-focused cloud and detection projects
-- 🌱 Currently learning **Splunk, Microsoft Sentinel, and Wireshark** through legal home-lab exercises
-- 💬 Ask me about **web/API security, IAM, Terraform, Python automation, and responsible disclosure**
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-Cloud_Security-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Azure-Learning-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white" alt="Azure" />
+  <img src="https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform&logoColor=white" alt="Terraform" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-DevSecOps-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Python-Automation-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Linux-Home_Lab-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+</p>
 
-## Security Operations & Detection 🛡️
-
-I enjoy the full security-operations workflow: turning raw security events into useful alerts, investigating suspicious behaviour, and improving detections over time. The projects below are practical Python examples of log monitoring and defensive automation.
-
-| Project | Detection focus | What it demonstrates |
-| --- | --- | --- |
-| [Failed Login Detector](https://github.com/hasinosec/failed-login-detector) | Potential brute-force activity | Analyses authentication logs, groups failed attempts by source IP, and flags repeated failures within a configurable time window. |
-| [File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor) | Unexpected file changes | Creates SHA-256 baselines and identifies monitored files that have been modified, added, or deleted. |
-
-These projects relate to common SOC activities: alert analysis, detection logic, investigation of suspicious activity, and automation of repetitive checks.
-
-### Failed Login Detection Flow
-
-![Illustrative workflow for the Failed Login Detector](assets/failed-login-detector-flow.svg)
-
-### File Integrity Monitoring Flow
-
-![Illustrative workflow for the File Integrity Monitor](assets/file-integrity-monitor-flow.svg)
-
-## Cloud Security Engineering ☁️
-
-I developed **File Vault**, a secure document-upload platform that models a small-company AWS architecture. The project is designed to demonstrate how security is built into cloud infrastructure: controlling identity access, protecting data, separating networks, securely managing secrets, and collecting audit evidence.
-
-```mermaid
-flowchart LR
-    User[User] --> App[Application]
-    App --> S3[Encrypted private S3 storage]
-    App --> RDS[Private RDS PostgreSQL]
-    App --> Secrets[AWS Secrets Manager]
-    Audit[CloudTrail and CloudWatch] --- App
-    Audit --- S3
-    Audit --- RDS
-```
-
-![Illustrative File Vault architecture](assets/file-vault-architecture.svg)
-
-*This is a simplified view of how I designed File Vault to protect documents, isolate data services, manage secrets, and capture security-relevant activity. Account-specific infrastructure details remain private during the final security review.*
-
-File Vault demonstrates:
-
-- **Identity and access management:** least-privilege IAM roles and narrowly scoped permissions help ensure each service has only the access it needs.
-- **Network security:** VPC segmentation and private data services reduce unnecessary exposure of the database and storage layer.
-- **Data protection:** encrypted, versioned S3 storage with public-access blocking helps protect uploaded documents from accidental exposure or loss.
-- **Secrets management:** database credentials are stored in AWS Secrets Manager instead of source code or configuration files.
-- **Visibility and auditability:** CloudWatch and CloudTrail support monitoring, log collection, and investigation of important cloud activity.
-- **Infrastructure as code:** Terraform makes the cloud configuration repeatable, reviewable, and easier to assess for security misconfigurations.
-- **Security automation:** GitHub Actions, Checkov, and Trivy are used to support CI/CD checks and policy-as-code scanning before infrastructure changes are deployed.
-
-## Security Research & Bug Bounty 🔍
-
-I have reported and helped resolve 10+ vulnerabilities through public bug bounty and coordinated-disclosure programmes, including reports affecting Budibase, DataZone.co, Beefree.com, Amplitude, Weights & Biases, Greptile, and CodeRabbit. My goal is to help organisations understand, fix, and prevent security issues through clear, responsible reporting.
-
-### Research Areas & Testing Methodologies
-
-**Access control & authentication:** broken access control, IDOR, missing authentication for critical functions, privilege escalation, authentication bypass, JWT testing, and role-based access-control testing.
-
-**Web & API security:** SQL injection, stored/reflected/DOM XSS, CSRF, SSRF, RCE, path traversal, deserialisation risks, XXE, HTTP request smuggling, and WebSocket security testing.
-
-**Application logic & data protection:** business-logic flaws, race conditions, insecure password-reset flows, information disclosure, PII exposure, JavaScript analysis, and API abuse.
-
-**Modern security research:** prompt-injection testing and AI-application security research, performed only within authorised scope.
-
-### CVEs Assigned
-
-### CVE-2026-73407 — Critical
-
-I reported an unauthenticated cross-origin authentication leak in Budibase REST datasources. A public query could send stored datasource credentials to an attacker-controlled destination. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5)
-
-### CVE-2026-73409 — High
-
-I reported a server-side filesystem existence/read oracle caused by builder-controlled MongoDB certificate paths. The issue could reveal whether sensitive server-side paths existed. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6)
-
-### CVE-2026-25040 — Critical
-
-I reported an API privilege-escalation issue where a Creator role could invite users with Admin or arbitrary roles. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm)
-
-### CVE-2026-25045 — Critical
-
-I reported a missing-RBAC issue involving privilege escalation and IDOR in user-role management. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9)
-
-### CVE-2026-25043 — Medium
-
-I reported an unauthenticated password-reset endpoint that lacked rate limiting and could be abused for email flooding. [Official advisory](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh)
-
-### What this demonstrates
-
-These reports cover different security failure modes: access-control flaws, insecure API behaviour, credential exposure, unauthenticated attack paths, and unsafe server-side file handling. Together, they show how I investigate a vulnerability from discovery and impact analysis through responsible disclosure, remediation discussion, and public security-advisory publication.
-
-## CTFs & Hands-On Security Learning 🎯
-
-I use legal Capture The Flag (CTF) labs and learning environments to practise security skills safely. On [TryHackMe](https://tryhackme.com/p/Hasinosec), I have completed **262 rooms**, earned **23 badges**, and reached the platform's **top 1%** (rank **10,599** at the time of this update).
-
-My completed labs cover Linux, networking, web and API security, enumeration, vulnerability analysis, exploitation fundamentals, and privilege escalation. CTFs help me understand how attackers discover weaknesses while reinforcing the defensive controls needed to prevent them.
-
-### TryHackMe Learning Highlights
-
-- **Security foundations:** Linux Fundamentals, Network Fundamentals, How the Web Works, Security Awareness, and Introduction to Security Engineering.
-- **Web application security:** OWASP Top 10, SQLMap, web fundamentals, and practical testing concepts.
-- **Infrastructure and cloud security:** Introduction to IaC Security and secure infrastructure concepts.
-- **Windows and network labs:** Ice, Blue, Metasploitable, and other controlled environments for understanding Windows and network attack paths.
-- **Research and investigation:** OhSINT, Hash Cracker, and Mr. Robot.
-- **Consistency:** completed 7-day and 30-day learning streak challenges, plus Advent of Cyber 2024.
-
-I am currently ranked **#53 on TryHackMe's Nigeria all-time leaderboard** (rank at the time of this update).
+---
 
 ## Featured Projects
 
-- **File Vault** *(private while sanitising infrastructure information)* — Terraform-managed AWS document platform with private RDS, encrypted S3, least-privilege IAM, logging, and CI security checks.
-- [Failed Login Detector](https://github.com/hasinosec/failed-login-detector) — Python-based security-monitoring tool that analyses authentication logs, identifies repeated failed-login activity by source IP, and flags potential brute-force behaviour within a configurable time window.
-- [File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor) — Python SHA-256 monitor that reports modified, new, and deleted files.
+| Project | What it proves | Stack |
+| --- | --- | --- |
+| **[File Vault](https://github.com/hasinosec/file-vault)** &mdash; secure document platform on AWS | Security designed into cloud infrastructure: least-privilege IAM, private data services, encryption, secrets management, and audit logging &mdash; all as reviewable code | Terraform &middot; AWS &middot; Node.js &middot; GitHub Actions |
+| **[Failed Login Detector](https://github.com/hasinosec/failed-login-detector)** | Detection logic for brute-force activity: parse auth logs, group failures by source IP, alert on a threshold within a time window | Python &middot; MITRE ATT&CK T1110 |
+| **[File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor)** | File-integrity monitoring from first principles: SHA-256 baseline, then detect modified, new, and deleted files with severity | Python &middot; SHA-256 |
+| **AWS Secure Baseline** &mdash; *in progress* | Account guardrails and posture management: SCPs, org CloudTrail, GuardDuty, Security Hub, Config rules, and a Prowler score report | Terraform &middot; AWS Organizations &middot; Prowler |
 
-## Security Approach
+---
 
-I approach security from both sides: understanding how vulnerabilities can be discovered and abused, then applying controls that make systems more resilient.
+## Cloud Security &amp; DevSecOps
 
-```mermaid
-flowchart LR
-    Research[Security research] --> Controls[Preventive controls]
-    Controls --> Monitoring[Monitoring and detection]
-    Monitoring --> Triage[Alert triage and investigation]
-    Triage --> Improvement[Improve controls and detection]
-    Improvement --> Research
-```
+I harden a cloud account in layers, and I put the security checks in CI so nothing insecure ships.
 
-I am particularly interested in secure cloud architecture, API security, access control, monitoring, detection engineering, and incident response.
+![Cloud security reference model](assets/cloud-security-model.svg)
 
-## Skills 🛠️
+**File Vault** puts this into practice:
 
-### ☁️ Cloud Security
+- **Identity and access.** Least-privilege IAM roles scope every service to only the access it needs. No long-lived keys.
+- **Network.** VPC segmentation keeps the database and file storage off the public internet.
+- **Data protection.** S3 storage is encrypted, versioned, and blocks all public access.
+- **Secrets.** Database credentials live in AWS Secrets Manager, never in source code or config.
+- **Auditability.** CloudTrail and CloudWatch capture audit events and application logs for investigation.
+- **Infrastructure as code.** Terraform makes the configuration repeatable, reviewable, and scannable for misconfiguration.
+- **Security automation.** GitHub Actions runs Checkov, tfsec, Trivy, and gitleaks on every change; findings go to the Security tab and High/Critical fails the build.
 
-AWS · IAM and least privilege · VPC and network segmentation · S3 encryption and public-access blocking · RDS security · AWS Secrets Manager · CloudTrail · CloudWatch · Terraform · policy as code · cloud-security posture management
+![DevSecOps pipeline](assets/devsecops-pipeline.svg)
 
-### 🛡️ Security Operations & Detection
+---
 
-Security monitoring · log analysis · alert triage · threat hunting · incident response fundamentals · detection engineering · file-integrity monitoring · brute-force detection · vulnerability research
+## Security Research
 
-### 📚 Security Tool Learning Lab
+Five CVEs assigned, all published as official GitHub Security Advisories on the **Budibase** platform and credited to **@Hasinohacker**.
 
-I am building a legal home-lab workflow to practise security monitoring and network analysis on systems and traffic that I own or am explicitly authorised to test.
+![CVE portfolio](assets/cve-portfolio.svg)
 
-- **Wireshark:** inspecting packet captures to understand protocols, DNS requests, connections, and suspicious network patterns.
-- **Splunk:** learning how to ingest logs, search events, build dashboards, and create simple detection queries.
-- **Microsoft Sentinel:** learning SIEM concepts, log analytics, analytics rules, and incident investigation workflows.
+| CVE | Severity | Issue | Advisory |
+| --- | --- | --- | --- |
+| **CVE-2026-73407** | Critical | Unauthenticated REST datasource credential theft via cross-origin auth leak | [GHSA-mqhr-6j6h-74p5](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5) |
+| **CVE-2026-25040** | Critical | Privilege escalation &mdash; Creator role can invite users with Admin / any role | [GHSA-4wfw-r86x-qxrm](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm) |
+| **CVE-2026-25045** | Critical | Missing RBAC &mdash; privilege escalation and IDOR in user-role management | [GHSA-2g39-332f-68p9](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) |
+| **CVE-2026-73409** | High | Server filesystem existence/read oracle via builder-controlled MongoDB cert path | [GHSA-ppr4-5f46-j9c6](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) |
+| **CVE-2026-25043** | Medium | Unauthenticated password-reset endpoint lacks rate limiting (email flooding) | [GHSA-277c-prw2-rqgh](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) |
 
-This is an active learning area. I will publish a separate lab project with real, sanitised screenshots and documented findings after completing the exercises.
+Additional valid reports through coordinated disclosure:
 
-### 🔍 Application Security & Bug Bounty
+- **[Bugcrowd &middot; @ismailhacker](https://bugcrowd.com/h/ismailhacker)** &mdash; 7 valid submissions (77.78% accuracy), mostly broken access control; **Amplitude** in the Hall of Fame.
+- **[HackerOne &middot; @hasinohacker](https://hackerone.com/hasinohacker)** &mdash; valid report and thanks from **Weights &amp; Biases**.
 
-OWASP Top 10 · OWASP API Security Top 10 · API testing · secure code review · SAST/DAST concepts · responsible disclosure · access-control testing · business-logic testing · web application penetration testing
+Focus areas: broken access control, IDOR, privilege escalation, authentication bypass, SSRF, insecure password-reset flows, and business-logic abuse &mdash; tested only within authorised scope.
 
-### ⚙️ DevSecOps & CI/CD Security
+---
 
-GitHub Actions · infrastructure-as-code security · Checkov · Trivy · dependency and container-scanning concepts · security checks before deployment · secure configuration review
+## Hands-On Practice
 
-### 💻 Tools & Languages
+![TryHackMe stats](assets/thm-stats.svg)
 
-Burp Suite · Python · JavaScript · Node.js · Terraform · Git · GitHub · AWS CLI
+On [TryHackMe](https://tryhackme.com/p/Hasinosec) I have completed **262 rooms**, earned **23 badges**, reached the
+**top 1%** of users, and rank **#53 on the Nigeria all-time leaderboard**. Labs cover Linux, networking, web and API
+security, enumeration, exploitation, and privilege escalation. I also completed Advent of Cyber 2024 and the 7- and
+30-day streak challenges.
+
+---
+
+## Roadmap
+
+![Build roadmap](assets/roadmap.svg)
+
+---
+
+## Skills
+
+![Capability map](assets/capabilities.svg)
+
+**Proficient**
+
+- **Cloud security (AWS):** IAM and least privilege, VPC and network segmentation, S3 and RDS hardening, AWS Secrets Manager, CloudTrail, CloudWatch, cloud security posture management
+- **Infrastructure as code:** Terraform, module design, remote state, plan review
+- **DevSecOps &amp; CI/CD:** GitHub Actions, Checkov, tfsec, Trivy, gitleaks, policy-as-code, dependency and container scanning
+- **Application &amp; API security:** OWASP Top 10, OWASP API Security Top 10, access-control and business-logic testing, secure code review, Burp Suite
+- **Languages &amp; tools:** Python, JavaScript / Node.js, Bash, Git, AWS CLI
+
+**Learning / in progress**
+
+- **Azure** cloud security
+- **Detection &amp; SIEM:** Splunk, Microsoft Sentinel, Wireshark &mdash; in a legal home lab, on systems and traffic I own or am authorised to test
+- **Kubernetes** security (hardening lab planned)
+
+---
 
 ## Connect
 
-- [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/)
-- [TryHackMe](https://tryhackme.com/p/Hasinosec)
+[LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/) &middot;
+[TryHackMe](https://tryhackme.com/p/Hasinosec) &middot;
+[HackerOne](https://hackerone.com/hasinohacker) &middot;
+[Bugcrowd](https://bugcrowd.com/h/ismailhacker) &middot;
+[Upwork](https://www.upwork.com/freelancers/~01e73f14f1161c7f0d)

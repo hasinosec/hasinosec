@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="t d">
+  <title id="t">Build roadmap</title>
+  <desc id="d">A three-stage roadmap. Done: File Vault on AWS with Terraform, two Python detection tools, five CVEs. In progress: public AWS secure baseline, DevSecOps pipeline repo, Splunk and Sentinel home lab. Next: Kubernetes hardening lab, cloud detection and automated response, compliance-as-code.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#181226"/></linearGradient>
+  </defs>
+  <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+  <text x="48" y="52" fill="#ffffff" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="26" font-weight="800">Build Roadmap</text>
+  <text x="48" y="80" fill="#94a3b8" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="15">Where the portfolio is and where it is going.</text>
+
+  <line x1="80" y1="200" x2="1120" y2="200" stroke="#334155" stroke-width="3"/>
+
+  <g font-family="Segoe UI, system-ui, Arial, sans-serif">
+    <!-- Done -->
+    <circle cx="240" cy="200" r="14" fill="#34d399"/>
+    <rect x="110" y="110" width="260" height="70" rx="14" fill="#0e4f4a" stroke="#34d399" stroke-width="1.5"/>
+    <text x="130" y="138" fill="#d1fae5" font-size="15" font-weight="800">Done</text>
+    <text x="130" y="160" fill="#6ee7b7" font-size="12">File Vault (AWS + Terraform)</text>
+    <text x="130" y="176" fill="#6ee7b7" font-size="12">2 Python detection tools &#183; 5 CVEs</text>
+
+    <!-- In progress -->
+    <circle cx="600" cy="200" r="14" fill="#fbbf24"/>
+    <rect x="470" y="220" width="260" height="86" rx="14" fill="#7c2d12" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="490" y="248" fill="#fef3c7" font-size="15" font-weight="800">In Progress</text>
+    <text x="490" y="270" fill="#fdba74" font-size="12">Public AWS secure baseline</text>
+    <text x="490" y="286" fill="#fdba74" font-size="12">DevSecOps pipeline repo</text>
+    <text x="490" y="302" fill="#fdba74" font-size="12">Splunk / Sentinel home lab</text>
+
+    <!-- Next -->
+    <circle cx="960" cy="200" r="14" fill="#60a5fa"/>
+    <rect x="830" y="110" width="270" height="86" rx="14" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.5"/>
+    <text x="850" y="138" fill="#dbeafe" font-size="15" font-weight="800">Next</text>
+    <text x="850" y="160" fill="#93c5fd" font-size="12">Kubernetes hardening lab</text>
+    <text x="850" y="176" fill="#93c5fd" font-size="12">Cloud detection + auto-response</text>
+    <text x="850" y="192" fill="#93c5fd" font-size="12">Compliance-as-code (CIS / NIST)</text>
+  </g>
+</svg>

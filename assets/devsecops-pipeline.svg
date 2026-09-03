@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="t d">
+  <title id="t">DevSecOps pipeline — security gates before deploy</title>
+  <desc id="d">A left-to-right pipeline: commit, then secret scanning with gitleaks, then static analysis with Semgrep, then dependency and container scanning with Trivy, then infrastructure-as-code scanning with Checkov and tfsec, then a policy-as-code gate with OPA, then deploy through OIDC with no long-lived keys. Any High or Critical finding fails the build.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#1a1330"/></linearGradient>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="9" refY="3.5" orient="auto"><path d="M0 0L11 3.5L0 7Z" fill="#e2e8f0"/></marker>
+  </defs>
+  <rect width="1200" height="430" rx="24" fill="url(#bg)"/>
+  <text x="48" y="54" fill="#ffffff" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="26" font-weight="800">DevSecOps Pipeline</text>
+  <text x="48" y="82" fill="#94a3b8" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="15">Every change passes automated security gates. Results go to the GitHub Security tab. High/Critical fails the build.</text>
+
+  <g font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="middle" font-weight="700">
+    <g transform="translate(40,150)">
+      <rect width="150" height="120" rx="16" fill="#1e293b" stroke="#64748b"/>
+      <text x="75" y="46" fill="#fff" font-size="16">Commit</text><text x="75" y="72" fill="#94a3b8" font-size="12">pre-commit</text><text x="75" y="90" fill="#94a3b8" font-size="12">hooks</text>
+    </g>
+    <g transform="translate(215,150)">
+      <rect width="150" height="120" rx="16" fill="#0e7490"/>
+      <text x="75" y="42" fill="#fff" font-size="16">Secrets</text><text x="75" y="66" fill="#cffafe" font-size="12">gitleaks</text><text x="75" y="84" fill="#cffafe" font-size="12">trufflehog</text>
+    </g>
+    <g transform="translate(390,150)">
+      <rect width="150" height="120" rx="16" fill="#4338ca"/>
+      <text x="75" y="42" fill="#fff" font-size="16">SAST</text><text x="75" y="66" fill="#e0e7ff" font-size="12">Semgrep</text><text x="75" y="84" fill="#e0e7ff" font-size="12">CodeQL</text>
+    </g>
+    <g transform="translate(565,150)">
+      <rect width="150" height="120" rx="16" fill="#7c3aed"/>
+      <text x="75" y="42" fill="#fff" font-size="16">SCA + Image</text><text x="75" y="66" fill="#ede9fe" font-size="12">Trivy</text><text x="75" y="84" fill="#ede9fe" font-size="12">SBOM &#183; Grype</text>
+    </g>
+    <g transform="translate(740,150)">
+      <rect width="150" height="120" rx="16" fill="#b45309"/>
+      <text x="75" y="42" fill="#fff" font-size="16">IaC Scan</text><text x="75" y="66" fill="#fef3c7" font-size="12">Checkov</text><text x="75" y="84" fill="#fef3c7" font-size="12">tfsec</text>
+    </g>
+    <g transform="translate(915,150)">
+      <rect width="150" height="120" rx="16" fill="#be123c"/>
+      <text x="75" y="42" fill="#fff" font-size="16">Policy Gate</text><text x="75" y="66" fill="#ffe4e6" font-size="12">OPA /</text><text x="75" y="84" fill="#ffe4e6" font-size="12">Conftest</text>
+    </g>
+    <g transform="translate(1030,300)">
+      <rect width="130" height="86" rx="16" fill="#047857"/>
+      <text x="65" y="36" fill="#fff" font-size="16">Deploy</text><text x="65" y="60" fill="#d1fae5" font-size="12">OIDC, no keys</text>
+    </g>
+  </g>
+
+  <g stroke="#e2e8f0" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="190" y1="210" x2="213" y2="210"/>
+    <line x1="365" y1="210" x2="388" y2="210"/>
+    <line x1="540" y1="210" x2="563" y2="210"/>
+    <line x1="715" y1="210" x2="738" y2="210"/>
+    <line x1="890" y1="210" x2="913" y2="210"/>
+    <line x1="1065" y1="270" x2="1080" y2="298"/>
+  </g>
+  <text x="600" y="358" text-anchor="middle" fill="#fca5a5" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="14" font-weight="700">&#9888; Any gate returning High or Critical stops the pipeline &#8212; nothing insecure reaches the cloud.</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="t d">
+  <title id="t">Capability map</title>
+  <desc id="d">Five capability areas with an honest confidence level each. Cloud Security: strong. DevSecOps and CI/CD: strong. Infrastructure as Code: strong. Application Security: solid. Detection and SIEM: growing. Each card lists the concrete tools used.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#141d33"/></linearGradient>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="url(#bg)"/>
+  <text x="48" y="52" fill="#ffffff" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="26" font-weight="800">Capability Map</text>
+  <text x="48" y="80" fill="#94a3b8" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="15">Honest self-assessment &#8212; bar length is confidence, not marketing. Tools listed are ones I have actually used.</text>
+
+  <g font-family="Segoe UI, system-ui, Arial, sans-serif">
+    <!-- Cloud Security -->
+    <text x="48" y="132" fill="#e2e8f0" font-size="16" font-weight="800">Cloud Security &#183; AWS</text>
+    <rect x="360" y="116" width="792" height="22" rx="11" fill="#1e293b"/>
+    <rect x="360" y="116" width="675" height="22" rx="11" fill="#0ea5e9"/>
+    <text x="360" y="160" fill="#7dd3fc" font-size="12">IAM &amp; least privilege &#183; VPC design &#183; S3/RDS hardening &#183; Secrets Manager &#183; CloudTrail &#183; CloudWatch &#183; CSPM</text>
+
+    <!-- IaC -->
+    <text x="48" y="204" fill="#e2e8f0" font-size="16" font-weight="800">Infrastructure as Code</text>
+    <rect x="360" y="188" width="792" height="22" rx="11" fill="#1e293b"/>
+    <rect x="360" y="188" width="660" height="22" rx="11" fill="#7c3aed"/>
+    <text x="360" y="232" fill="#c4b5fd" font-size="12">Terraform &#183; module design &#183; remote state &#183; plan review &#183; drift awareness</text>
+
+    <!-- DevSecOps -->
+    <text x="48" y="276" fill="#e2e8f0" font-size="16" font-weight="800">DevSecOps &amp; CI/CD</text>
+    <rect x="360" y="260" width="792" height="22" rx="11" fill="#1e293b"/>
+    <rect x="360" y="260" width="620" height="22" rx="11" fill="#0d9488"/>
+    <text x="360" y="304" fill="#5eead4" font-size="12">GitHub Actions &#183; Checkov &#183; tfsec &#183; Trivy &#183; gitleaks &#183; policy-as-code &#183; SARIF to Security tab</text>
+
+    <!-- AppSec -->
+    <text x="48" y="348" fill="#e2e8f0" font-size="16" font-weight="800">Application &amp; API Security</text>
+    <rect x="360" y="332" width="792" height="22" rx="11" fill="#1e293b"/>
+    <rect x="360" y="332" width="560" height="22" rx="11" fill="#d97706"/>
+    <text x="360" y="376" fill="#fdba74" font-size="12">OWASP Top 10 &amp; API Top 10 &#183; access-control &amp; business-logic testing &#183; Burp Suite &#183; 5 CVEs</text>
+
+    <!-- Detection -->
+    <text x="48" y="420" fill="#e2e8f0" font-size="16" font-weight="800">Detection &amp; SIEM</text>
+    <rect x="360" y="404" width="792" height="22" rx="11" fill="#1e293b"/>
+    <rect x="360" y="404" width="360" height="22" rx="11" fill="#e11d48"/>
+    <text x="360" y="448" fill="#fda4af" font-size="12">Detection logic in Python &#183; log analysis &#183; learning Splunk, Microsoft Sentinel, Wireshark</text>
+
+    <g font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">
+      <text x="360" y="486">weaker</text>
+      <text x="1152" y="486" text-anchor="end">stronger</text>
+      <line x1="360" y1="474" x2="1152" y2="474" stroke="#334155" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
