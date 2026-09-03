@@ -10,6 +10,12 @@
 
   <line x1="80" y1="200" x2="1120" y2="200" stroke="#334155" stroke-width="3"/>
 
+  <g stroke-width="2" stroke-dasharray="3 3">
+    <line x1="240" y1="186" x2="240" y2="180" stroke="#34d399"/>
+    <line x1="600" y1="214" x2="600" y2="220" stroke="#fbbf24"/>
+    <line x1="960" y1="186" x2="960" y2="196" stroke="#60a5fa"/>
+  </g>
+
   <g font-family="Segoe UI, system-ui, Arial, sans-serif">
     <!-- Done -->
     <circle cx="240" cy="200" r="14" fill="#34d399"/>
