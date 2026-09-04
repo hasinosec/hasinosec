@@ -142,8 +142,6 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 **Certifications**
 - Google Cybersecurity Professional Certificate — 2023
 - IBM Cybersecurity Analyst Professional Certificate — 2024
-
-**Certification exam scheduled**
 - Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500) — 2026
 
 ## Connect
