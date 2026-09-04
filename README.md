@@ -138,7 +138,13 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 ## Education & Certifications
 
 - **University of the People** — B.Sc. Computer Science, 2025–2027
-- **Pursuing:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500)
+
+**Certifications**
+- Google Cybersecurity Professional Certificate — 2023
+- IBM Cybersecurity Analyst Professional Certificate — 2024
+
+**Certification exam scheduled**
+- Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500) — 2026
 
 ## Connect
 
