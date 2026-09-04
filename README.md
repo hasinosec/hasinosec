@@ -119,8 +119,6 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 
 ## Skills
 
-![Capability map](assets/capabilities.svg)
-
 - **Cloud (AWS):** IAM and least privilege, VPC and network segmentation, S3 and RDS hardening, KMS, Secrets Manager, CloudTrail, CloudWatch
 - **Infrastructure as code:** Terraform — module design, remote state, plan review
 - **DevSecOps:** GitHub Actions, Checkov, tfsec, Trivy, gitleaks, policy-as-code, dependency and container scanning
