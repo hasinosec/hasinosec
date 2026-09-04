@@ -13,8 +13,8 @@ segmentation, data protection, security automation in CI, and detection. I start
 security research (5 assigned CVEs, valid bug bounty reports) and moved to building the
 controls that stop those bugs.
 
-Strongest on **AWS and Terraform**. Actively building depth in **Azure**.
-**Studying for:** Microsoft AZ-500 (Azure Security Engineer Associate).
+Strongest on **AWS, Terraform, Docker, and Kubernetes**.
+**Studying for:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500).
 
 **Reach me:** [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/) · [Upwork](https://www.upwork.com/freelancers/~01e73f14f1161c7f0d) · manhasino@gmail.com
 
@@ -48,6 +48,16 @@ around it. Full [architecture and threat model](https://github.com/hasinosec/fil
 - **Evidence:** ~25 resources across 8 Terraform files; 4 CI jobs on every push; Checkov reports 94 passing checks and 13 exceptions, each with a reason written in the code.
 
 ![File Vault CI security pipeline](assets/devsecops-pipeline.svg)
+
+### [Container Security](https://github.com/hasinosec/container-security) — Docker hardening, with real before/after scans
+
+Two Dockerfiles for the same app: a deliberately weak one and a hardened one,
+with real Trivy and Hadolint results for both — nothing estimated.
+
+- **9,314 → 183 vulnerabilities** (98% fewer), **232 → 3 Critical**
+- **1.6 GB → 206 MB** image (multi-stage build, slim base)
+- Root → non-root (uid 101), secret removed from the image, `HEALTHCHECK` added
+- Documents a real bug hit while hardening it (missing `$HOME` broke `pip install --user`) and the 3 remaining Critical findings that have no upstream fix yet
 
 ### [Failed Login Detector](https://github.com/hasinosec/failed-login-detector)
 
@@ -108,11 +118,16 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 
 ## Roadmap
 
-**Done** — File Vault on AWS · two Python detection tools · 5 CVEs · security CI with Checkov/tfsec/Trivy/gitleaks
+**Done** — File Vault on AWS · Docker hardening case study (98% fewer vulnerabilities) · two Python detection tools · 5 CVEs · security CI with Checkov/tfsec/Trivy/gitleaks
 
-**In progress** — `aws-secure-baseline` (org guardrails, GuardDuty, Security Hub, Config, Prowler) · Terraform policy-as-code guardrail kit
+**In progress** — Kubernetes hardening lab (Pod Security Admission + Kyverno, real cluster) · `aws-secure-baseline` (org guardrails, GuardDuty, Security Hub, Config, Prowler) · Terraform policy-as-code guardrail kit
 
-**Planned** — `azure-secure-baseline` (Entra ID, Conditional Access, PIM, Key Vault, Azure Policy) · cloud detection rules (CloudTrail + Entra) mapped to MITRE ATT&CK · Kubernetes hardening lab · cloud incident-response case study
+**Planned** — cloud detection rules (CloudTrail) mapped to MITRE ATT&CK · cloud incident-response case study
+
+## Education & Certifications
+
+- **University of the People** — B.Sc. Computer Science, 2025–2027 (in progress)
+- **Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500)** — exam scheduled
 
 ## Connect
 
