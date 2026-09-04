@@ -30,7 +30,7 @@ Strongest on **AWS, Terraform, Docker, and Kubernetes**.
 
 ## Featured Projects
 
-All three have public code, tests, and CI.
+All of these have public code and CI.
 
 ### [File Vault](https://github.com/hasinosec/file-vault) — secure document platform on AWS
 
@@ -58,6 +58,18 @@ with real Trivy and Hadolint results for both — nothing estimated.
 - **1.6 GB → 206 MB** image (multi-stage build, slim base)
 - Root → non-root (uid 101), secret removed from the image, `HEALTHCHECK` added
 - Documents a real bug hit while hardening it (missing `$HOME` broke `pip install --user`) and the 3 remaining Critical findings that have no upstream fix yet
+
+### [Kubernetes Hardening Lab](https://github.com/hasinosec/k8s-hardening-lab) — real cluster, real admission control
+
+A real local Kubernetes cluster, an insecure workload, and two independent
+admission-control layers tested against it — everything is actual `kubectl`
+output, not a diagram.
+
+- Kubernetes' built-in Pod Security Admission genuinely rejects the insecure pod (0 pods ever created)
+- 5 custom Kyverno policies independently block all 9 violations in the same manifest, and pass the hardened one cleanly
+- Real kube-bench CIS run: **63 PASS / 12 FAIL / 56 WARN**, with every failure explained
+- A real operational finding: the policies initially blocked kube-bench itself (it needs `hostPath` + root) — fixed with a narrow exception, not a blanket bypass
+- Documents what *isn't* enforced here too — `kind`'s default CNI doesn't enforce NetworkPolicy — rather than staging a fake pass
 
 ### [Failed Login Detector](https://github.com/hasinosec/failed-login-detector)
 
@@ -118,9 +130,9 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 
 ## Roadmap
 
-**Done** — File Vault on AWS · Docker hardening case study (98% fewer vulnerabilities) · two Python detection tools · 5 CVEs · security CI with Checkov/tfsec/Trivy/gitleaks
+**Done** — File Vault on AWS · Docker hardening case study (98% fewer vulnerabilities) · [Kubernetes hardening lab](https://github.com/hasinosec/k8s-hardening-lab) (real cluster, Pod Security Admission + Kyverno, kube-bench CIS score) · two Python detection tools · 5 CVEs · security CI with Checkov/tfsec/Trivy/gitleaks
 
-**In progress** — Kubernetes hardening lab (Pod Security Admission + Kyverno, real cluster) · `aws-secure-baseline` (org guardrails, GuardDuty, Security Hub, Config, Prowler) · Terraform policy-as-code guardrail kit
+**In progress** — `aws-secure-baseline` (org guardrails, GuardDuty, Security Hub, Config, Prowler) · Terraform policy-as-code guardrail kit
 
 **Planned** — cloud detection rules (CloudTrail) mapped to MITRE ATT&CK · cloud incident-response case study
 
