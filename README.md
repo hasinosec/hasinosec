@@ -44,7 +44,8 @@ around it. Full [architecture and threat model](https://github.com/hasinosec/fil
 - S3 is encrypted with a KMS key I manage, versioned, all public access blocked, and a bucket policy rejects any non-TLS request.
 - The database password is generated and held by Secrets Manager — never in code or Terraform state.
 - The instance requires IMDSv2 and uses an encrypted root volume.
-- **Evidence:** ~25 resources across 8 Terraform files; 4 CI security jobs on every push; Checkov reports 94 passing checks and 13 exceptions, each with a reason written in the code.
+- Every push runs gitleaks, `terraform fmt`/`validate`, Checkov, Trivy (IaC and image), `npm audit`, and a Docker build.
+- **Evidence:** ~25 resources across 8 Terraform files; 4 CI jobs on every push; Checkov reports 94 passing checks and 13 exceptions, each with a reason written in the code.
 
 ![File Vault CI security pipeline](assets/devsecops-pipeline.svg)
 

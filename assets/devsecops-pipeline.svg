@@ -21,9 +21,9 @@
   <!-- reporting row -->
   <text x="48" y="266" fill="#fdba74" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="13" font-weight="700">REPORTS TO THE SECURITY TAB (SARIF)</text>
   <g font-family="Segoe UI, system-ui, Arial, sans-serif" text-anchor="middle" font-weight="700">
-    <g transform="translate(48,278)"><rect width="150" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="75" y="36" fill="#fff" font-size="15">Checkov</text><text x="75" y="58" fill="#fcd34d" font-size="12">IaC misconfig</text></g>
-    <g transform="translate(226,278)"><rect width="150" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="75" y="36" fill="#fff" font-size="15">tfsec</text><text x="75" y="58" fill="#fcd34d" font-size="12">IaC rules</text></g>
-    <g transform="translate(404,278)"><rect width="160" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="80" y="36" fill="#fff" font-size="15">Trivy</text><text x="80" y="58" fill="#fcd34d" font-size="12">image CVEs</text></g>
+    <g transform="translate(48,278)"><rect width="160" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="80" y="36" fill="#fff" font-size="15">Checkov</text><text x="80" y="58" fill="#fcd34d" font-size="12">IaC misconfig</text></g>
+    <g transform="translate(236,278)"><rect width="160" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="80" y="36" fill="#fff" font-size="15">Trivy IaC</text><text x="80" y="58" fill="#fcd34d" font-size="12">config scan</text></g>
+    <g transform="translate(424,278)"><rect width="170" height="82" rx="14" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/><text x="85" y="36" fill="#fff" font-size="15">Trivy image</text><text x="85" y="58" fill="#fcd34d" font-size="12">image CVEs</text></g>
   </g>
 
   <!-- deploy -->
