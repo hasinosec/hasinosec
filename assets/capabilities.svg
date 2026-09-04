@@ -37,7 +37,7 @@
     <text x="48" y="420" fill="#e2e8f0" font-size="16" font-weight="800">Detection &amp; SIEM</text>
     <rect x="360" y="404" width="792" height="22" rx="11" fill="#1e293b"/>
     <rect x="360" y="404" width="360" height="22" rx="11" fill="#e11d48"/>
-    <text x="360" y="448" fill="#fda4af" font-size="12">Detection logic in Python &#183; log analysis &#183; learning Splunk, Microsoft Sentinel, Wireshark</text>
+    <text x="360" y="448" fill="#fda4af" font-size="12">Detection logic in Python &#183; log analysis &#183; Splunk &#183; Microsoft Sentinel &#183; Wireshark</text>
 
     <g font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">
       <text x="360" y="486">weaker</text>

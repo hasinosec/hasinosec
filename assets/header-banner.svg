@@ -28,7 +28,7 @@
   <rect x="56" y="52" width="8" height="120" rx="4" fill="url(#accent)"/>
   <text x="84" y="92" fill="#ffffff" font-family="Segoe UI, system-ui, -apple-system, Arial, sans-serif" font-size="42" font-weight="800">Ismail Hassan</text>
   <text x="84" y="132" fill="#c7d2fe" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="23" font-weight="600">Cloud Security &amp; DevSecOps Engineer</text>
-  <text x="84" y="164" fill="#94a3b8" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="16">Securing cloud infrastructure with code, guardrails, and detections &#183; Information Security</text>
+  <text x="84" y="164" fill="#94a3b8" font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="16">Securing cloud infrastructure with code, guardrails, and detections</text>
 
   <g font-family="Segoe UI, system-ui, Arial, sans-serif" font-size="15" font-weight="700" filter="url(#soft)">
     <g transform="translate(84,196)">
