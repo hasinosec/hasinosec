@@ -8,86 +8,94 @@
 
 ## About
 
-I work on cloud security and DevSecOps. I started in security research, finding and
-reporting vulnerabilities, and moved to the other side: building the controls that
-stop them.
+I build and secure cloud infrastructure with code — least-privilege identity, network
+segmentation, data protection, security automation in CI, and detection. I started in
+security research (5 assigned CVEs, valid bug bounty reports) and moved to building the
+controls that stop those bugs.
 
-Most of my time now is in AWS and Terraform — IAM, network design, encryption,
-logging, and security checks in CI so bad configuration never reaches an account.
-I also work with Azure. On the research side I have 5 assigned CVEs and valid bug
-bounty reports on Bugcrowd and HackerOne.
+Strongest on **AWS and Terraform**. Actively building depth in **Azure**.
+**Studying for:** Microsoft AZ-500 (Azure Security Engineer Associate).
 
 **Reach me:** [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/) · [Upwork](https://www.upwork.com/freelancers/~01e73f14f1161c7f0d) · manhasino@gmail.com
 
+## How I approach a workload
+
+1. Threat-model it — assets, trust boundaries, what an attacker gets.
+2. Scope identity to least privilege; no long-lived keys.
+3. Segment the network; keep data services private.
+4. Encrypt data and move secrets into a vault.
+5. Build it in Terraform so it is reviewable and repeatable.
+6. Scan every change in CI (secrets, IaC, dependencies, image) before it ships.
+7. Send logs to one place and write detections against them.
+
 ## Featured Projects
 
-| Project | What it proves | Stack |
-| --- | --- | --- |
-| **[File Vault](https://github.com/hasinosec/file-vault)** | Security built into cloud infrastructure as reviewable code: least-privilege IAM, private data services, KMS encryption, secrets management, logging, security CI | Terraform · AWS · GitHub Actions |
-| **[Failed Login Detector](https://github.com/hasinosec/failed-login-detector)** | Detection logic for brute-force activity: parse auth logs, group failures by source IP, alert on a threshold within a time window | Python · MITRE ATT&CK T1110 |
-| **[File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor)** | SHA-256 baseline, then detect modified, new, and deleted files with severity | Python |
-| **AWS Secure Baseline** *(building now)* | Account guardrails: org CloudTrail, Config + CIS pack, Security Hub, GuardDuty, IAM Identity Center, KMS, Prowler score in CI | Terraform · AWS Organizations |
-| **Azure Secure Baseline** *(building now)* | Entra ID, Conditional Access and PIM as code, Azure Policy guardrails, Key Vault, diagnostics to Log Analytics | Terraform · Microsoft Entra |
+All three have public code, tests, and CI.
 
-## Cloud Security & DevSecOps
+### [File Vault](https://github.com/hasinosec/file-vault) — secure document platform on AWS
 
-I harden a cloud account in layers and put the security checks in CI so nothing
-insecure ships.
-
-![Cloud security reference model](assets/cloud-security-model.svg)
-
-**File Vault** puts this into practice — full [architecture and threat model](https://github.com/hasinosec/file-vault/blob/main/THREAT_MODEL.md) in the repo:
+A document-upload service built the way a small company would build one: one web
+server, a private database, secrets in a vault, everything in Terraform, security
+scanning in CI. The app is deliberately small — the work is the infrastructure
+around it. Full [architecture and threat model](https://github.com/hasinosec/file-vault/blob/main/THREAT_MODEL.md) in the repo.
 
 - The EC2 role can reach one S3 bucket, one secret, and the CloudWatch agent. Nothing else.
 - The database runs in private subnets. Only the app's security group can connect to it.
-- S3 is encrypted with a KMS key I manage, versioned, and blocks all public access. A bucket policy rejects any request that is not over TLS.
-- The database password is generated and held by Secrets Manager. It never appears in the code or the Terraform state.
+- S3 is encrypted with a KMS key I manage, versioned, all public access blocked, and a bucket policy rejects any non-TLS request.
+- The database password is generated and held by Secrets Manager — never in code or Terraform state.
 - The instance requires IMDSv2 and uses an encrypted root volume.
-- Every push runs gitleaks, Checkov, tfsec and Trivy. Checkov reports 94 passing checks and 13 I chose to accept, each with a reason written in the code.
+- **Evidence:** ~25 resources across 8 Terraform files; 4 CI security jobs on every push; Checkov reports 94 passing checks and 13 exceptions, each with a reason written in the code.
 
-![DevSecOps pipeline](assets/devsecops-pipeline.svg)
+![File Vault CI security pipeline](assets/devsecops-pipeline.svg)
+
+### [Failed Login Detector](https://github.com/hasinosec/failed-login-detector)
+
+Parses authentication logs, groups failed logins by source IP, and alerts when one IP
+crosses a threshold inside a time window. Python, 8 tests, CI on 3.10–3.12. Maps to
+MITRE ATT&CK T1110.
+
+### [File Integrity Monitor](https://github.com/hasinosec/file-integrity-monitor)
+
+Builds a SHA-256 baseline of a directory and reports files that were changed, added,
+or removed, with severity. Python, 6 tests, CI.
+
+## Cloud Security Model
+
+How I harden a cloud account in layers, with the checks in CI so nothing insecure ships.
+
+![Cloud security reference model](assets/cloud-security-model.svg)
 
 ## Security Research
 
-Five CVEs, all in the Budibase platform, published as GitHub Security Advisories and
-credited to [@Hasinohacker](https://github.com/Hasinohacker).
+Five CVEs, all in the **Budibase** platform, all published as GitHub Security
+Advisories and credited to [@Hasinohacker](https://github.com/Hasinohacker).
 
 ![CVE portfolio](assets/cve-portfolio.svg)
 
-**Identity & access control**
+| CVE | Severity | Class | Summary | Advisory |
+| --- | --- | --- | --- | --- |
+| CVE-2026-73407 | Critical | Authentication | REST datasource credential theft via cross-origin auth leak | [GHSA-mqhr-6j6h-74p5](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5) |
+| CVE-2026-25040 | Critical | Access control | Creator role can invite users with Admin or any role | [GHSA-4wfw-r86x-qxrm](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm) |
+| CVE-2026-25045 | Critical | Access control | Missing RBAC — privilege escalation and IDOR in role management | [GHSA-2g39-332f-68p9](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) |
+| CVE-2026-73409 | High | Server-side | Filesystem existence/read oracle via builder-controlled MongoDB cert path | [GHSA-ppr4-5f46-j9c6](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) |
+| CVE-2026-25043 | Medium | Rate limiting | Unauthenticated password-reset endpoint with no rate limiting | [GHSA-277c-prw2-rqgh](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) |
 
-- [CVE-2026-25040](https://github.com/budibase/budibase/security/advisories/GHSA-4wfw-r86x-qxrm) — Critical — Creator role can invite users with Admin or any role
-- [CVE-2026-25045](https://github.com/budibase/budibase/security/advisories/GHSA-2g39-332f-68p9) — Critical — missing RBAC; privilege escalation and IDOR in role management
+**Bug bounty**
 
-**Authentication**
-
-- [CVE-2026-73407](https://github.com/budibase/budibase/security/advisories/GHSA-mqhr-6j6h-74p5) — Critical — REST datasource credential theft via cross-origin auth leak
-- [CVE-2026-25043](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) — Medium — unauthenticated password-reset endpoint with no rate limiting
-
-**Server-side**
-
-- [CVE-2026-73409](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) — High — filesystem existence/read oracle via builder-controlled MongoDB certificate path
-
-### Bug bounty
-
-- **[Bugcrowd](https://bugcrowd.com/h/ismailhacker)** — 7 valid submissions, 77.78% accuracy
-- Focus: broken access control, IDOR, business-logic abuse
-- Hall of Fame: Amplitude
-- **[HackerOne](https://hackerone.com/hasinohacker)** — valid report and thanks from Weights & Biases
+- [Bugcrowd](https://bugcrowd.com/h/ismailhacker) — 7 valid submissions, 77.78% accuracy. Focus: broken access control, IDOR, business-logic abuse. Hall of Fame: Amplitude.
+- [HackerOne](https://hackerone.com/hasinohacker) — valid report and thanks from Weights & Biases.
 
 ## Hands-On Practice
 
-![TryHackMe](assets/thm-stats.svg)
+![TryHackMe stats](assets/thm-stats.svg)
 
 262 [TryHackMe](https://tryhackme.com/p/Hasinosec) rooms across Linux, networking, web
-and API security, enumeration, and privilege escalation. Top 1% of users, and #53 on
-the Nigeria all-time board.
+and API security, enumeration, and privilege escalation. Top 1% of users; #53 on the
+Nigeria all-time board. Completed Advent of Cyber 2024.
 
 ## Skills
 
 ![Capability map](assets/capabilities.svg)
-
-**Core capabilities**
 
 - **Cloud (AWS):** IAM and least privilege, VPC and network segmentation, S3 and RDS hardening, KMS, Secrets Manager, CloudTrail, CloudWatch
 - **Infrastructure as code:** Terraform — module design, remote state, plan review
@@ -95,16 +103,15 @@ the Nigeria all-time board.
 - **Application & API security:** OWASP Top 10 and API Security Top 10, access-control and business-logic testing, secure code review, Burp Suite
 - **Languages:** Python, JavaScript and Node.js, Bash
 
-**Also working with**
+**Also working with:** Azure (Entra ID, RBAC, PIM, Conditional Access, Key Vault, Azure Policy, Microsoft Sentinel / KQL), Kubernetes security, Splunk, Wireshark
 
-- **Azure:** Entra ID and RBAC, PIM, Conditional Access, Key Vault, Azure Policy, Microsoft Sentinel and KQL
-- **Kubernetes:** admission policy, network policy, runtime detection
-- **SIEM and analysis:** Splunk, Wireshark
+## Roadmap
 
-## Now / Next
+**Done** — File Vault on AWS · two Python detection tools · 5 CVEs · security CI with Checkov/tfsec/Trivy/gitleaks
 
-- **Now:** AWS Secure Baseline, Azure Secure Baseline, a policy-as-code guardrail kit for Terraform.
-- **Next:** cloud detection rules (CloudTrail and Entra sign-in logs) mapped to MITRE ATT&CK, and a Kubernetes hardening lab.
+**In progress** — `aws-secure-baseline` (org guardrails, GuardDuty, Security Hub, Config, Prowler) · Terraform policy-as-code guardrail kit
+
+**Planned** — `azure-secure-baseline` (Entra ID, Conditional Access, PIM, Key Vault, Azure Policy) · cloud detection rules (CloudTrail + Entra) mapped to MITRE ATT&CK · Kubernetes hardening lab · cloud incident-response case study
 
 ## Connect
 
