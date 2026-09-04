@@ -14,7 +14,7 @@ security research (5 assigned CVEs, valid bug bounty reports) and moved to build
 controls that stop those bugs.
 
 Strongest on **AWS, Terraform, Docker, and Kubernetes**.
-**Studying for:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500).
+**Pursuing:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500).
 
 **Reach me:** [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/) · [Upwork](https://www.upwork.com/freelancers/~01e73f14f1161c7f0d) · manhasino@gmail.com
 
@@ -91,7 +91,8 @@ How I harden a cloud account in layers, with the checks in CI so nothing insecur
 ## Security Research
 
 Five CVEs, all in the **Budibase** platform, all published as GitHub Security
-Advisories and credited to [@Hasinohacker](https://github.com/Hasinohacker).
+Advisories. I reported all five under my security-research handle,
+[@Hasinohacker](https://github.com/Hasinohacker).
 
 ![CVE portfolio](assets/cve-portfolio.svg)
 
@@ -138,8 +139,8 @@ Nigeria all-time board. Completed Advent of Cyber 2024.
 
 ## Education & Certifications
 
-- **University of the People** — B.Sc. Computer Science, 2025–2027 (in progress)
-- **Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500)** — exam scheduled
+- **University of the People** — B.Sc. Computer Science, 2025–2027
+- **Pursuing:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500)
 
 ## Connect
 
