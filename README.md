@@ -88,11 +88,20 @@ How I harden a cloud account in layers, with the checks in CI so nothing insecur
 
 ![Cloud security reference model](assets/cloud-security-model.svg)
 
-## Security Research
+## Security Research & Bug Hunting
 
-Five CVEs, all in the **Budibase** platform, all published as GitHub Security
-Advisories. I reported all five under my security-research handle,
-[@Hasinohacker](https://github.com/Hasinohacker).
+I find and report vulnerabilities through public bug bounty programs and coordinated
+disclosure. Reports have been triaged, fixed by the vendor, and — for five of them —
+assigned CVEs and published as official GitHub Security Advisories.
+
+Most of my findings are **access-control and authentication** flaws: broken access
+control, IDOR, privilege escalation, missing RBAC, authentication bypass, and unsafe
+password-reset and business-logic flows.
+
+### CVEs
+
+Five CVEs, all in the **Budibase** platform, reported under my handle
+[@Hasinohacker](https://github.com/Hasinohacker):
 
 ![CVE portfolio](assets/cve-portfolio.svg)
 
@@ -104,10 +113,21 @@ Advisories. I reported all five under my security-research handle,
 | CVE-2026-73409 | High | Server-side | Filesystem existence/read oracle via builder-controlled MongoDB cert path | [GHSA-ppr4-5f46-j9c6](https://github.com/budibase/budibase/security/advisories/GHSA-ppr4-5f46-j9c6) |
 | CVE-2026-25043 | Medium | Rate limiting | Unauthenticated password-reset endpoint with no rate limiting | [GHSA-277c-prw2-rqgh](https://github.com/budibase/budibase/security/advisories/GHSA-277c-prw2-rqgh) |
 
-**Bug bounty**
+Each CVE links to its official advisory — all publicly verifiable.
 
-- [Bugcrowd](https://bugcrowd.com/h/ismailhacker) — 7 valid submissions, 77.78% accuracy. Focus: broken access control, IDOR, business-logic abuse. Hall of Fame: Amplitude.
+### Bug bounty
+
+- [Bugcrowd](https://bugcrowd.com/h/ismailhacker) — 7 valid submissions, 77.78% accuracy. Focus: broken access control, IDOR, business-logic abuse. Hall of Fame recognition: Amplitude.
 - [HackerOne](https://hackerone.com/hasinohacker) — valid report and thanks from Weights & Biases.
+
+### What this brings to the cloud work
+
+Three of my five CVEs are access-control failures — a role that can grant itself more
+than it should, missing RBAC checks, IDOR. That's the same class of mistake that shows
+up in cloud IAM: over-broad roles, missing resource-level conditions, trust boundaries
+that aren't actually enforced. Finding and reporting these from the outside is why the
+infrastructure I build starts from least privilege and explicit deny, and why I
+threat-model the identity layer first.
 
 ## Hands-On Practice
 
