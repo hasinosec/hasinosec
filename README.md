@@ -14,7 +14,6 @@ security research (5 assigned CVEs, valid bug bounty reports) and moved to build
 controls that stop those bugs.
 
 Strongest on **AWS, Terraform, Docker, and Kubernetes**.
-**Pursuing:** Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500).
 
 **Reach me:** [LinkedIn](https://www.linkedin.com/in/ismail-h-1229a92a7/) · [Upwork](https://www.upwork.com/freelancers/~01e73f14f1161c7f0d) · manhasino@gmail.com
 
